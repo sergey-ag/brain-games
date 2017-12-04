@@ -1,0 +1,14 @@
+{
+    "name": "sergey-ag/project-lvl1-s172",
+    "bin": [
+        "bin/brain-games"
+    ],
+    "type": "library",
+    "authors": [
+        {
+            "name": "Sergey Kravchenko",
+            "email": "sergey@craftworks.ru"
+        }
+    ],
+    "require": {}
+}
