@@ -1,7 +1,8 @@
 {
     "name": "sergey-ag/project-lvl1-s172",
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even"
     ],
     "type": "library",
     "authors": [
@@ -15,7 +16,8 @@
     },
     "autoload": {
         "files": [
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/Games.php"
         ]
     },
     "require": {
