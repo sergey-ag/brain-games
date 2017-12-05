@@ -10,12 +10,18 @@
             "email": "sergey@craftworks.ru"
         }
     ],
-    "require": {
-        "wp-cli/php-cli-tools": "^0.11.8"
+    "scripts": {
+        "phpcs": "phpcs"
     },
     "autoload": {
         "files": [
             "src/Cli.php"
         ]
+    },
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.8"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.1"
     }
 }
