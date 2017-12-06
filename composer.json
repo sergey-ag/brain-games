@@ -2,7 +2,8 @@
     "name": "sergey-ag/project-lvl1-s172",
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ],
     "type": "library",
     "authors": [
@@ -18,7 +19,10 @@
         "files": [
             "src/Cli.php",
             "src/BrainGames.php"
-        ]
+        ],
+        "psr-4": {
+            "Craft\\BrainGames\\Games\\": "src/games/"
+        }
     },
     "require": {
         "wp-cli/php-cli-tools": "^0.11.8"
