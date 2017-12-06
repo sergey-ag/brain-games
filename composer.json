@@ -17,7 +17,7 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/Games.php"
+            "src/BrainGames.php"
         ]
     },
     "require": {
