@@ -23,5 +23,5 @@ function calc()
                 break;
         }
     }
-    return json_encode(['welcomeMsg' => $welcomeMsg, 'gameQuestions' => $gameQuestions]);
+    return ['welcomeMsg' => $welcomeMsg, 'gameQuestions' => $gameQuestions];
 }

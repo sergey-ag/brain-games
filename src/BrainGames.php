@@ -11,14 +11,14 @@ const MAX_NUMBER = 100;
 function brainGame(string $game)
 {
     line('Welcome to the Brains Games');
-    extract(json_decode($game(), true));
-    line($welcomeMsg);
+    $gameData = $game();
+    line($gameData['welcomeMsg']);
     line();
     $name = \cli\prompt('May I have your name?');
     line('Hello, %s!', $name);
     line();
     $points = 0;
-    foreach ($gameQuestions as $item) {
+    foreach ($gameData['gameQuestions'] as $item) {
         line('Question: %s', $item['question']);
         $userAnswer = \cli\prompt('Your answer: ');
         if ($userAnswer === $item['answer']) {

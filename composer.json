@@ -20,7 +20,8 @@
             "src/Cli.php",
             "src/BrainGames.php",
             "src/games/Parity.php",
-            "src/games/Calc.php"
+            "src/games/Calc.php",
+            "src/games/Gcd.php"
         ]
     },
     "require": {

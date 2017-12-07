@@ -2,7 +2,7 @@
 
 namespace Craft\BrainGames\Games;
 
-function Parity()
+function parity()
 {
     $welcomeMsg = 'Answer "yes" if number even otherwise answer "no".';
     srand();
@@ -16,5 +16,5 @@ function Parity()
             $gameQuestions[] = ['question' => $number, 'answer' => 'no'];
         }
     }
-    return json_encode(['welcomeMsg' => $welcomeMsg, 'gameQuestions' => $gameQuestions]);
+    return ['welcomeMsg' => $welcomeMsg, 'gameQuestions' => $gameQuestions];
 }
