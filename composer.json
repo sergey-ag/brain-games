@@ -20,10 +20,11 @@
         "files": [
             "src/Cli.php",
             "src/BrainGames.php",
-            "src/games/Parity.php",
-            "src/games/Calc.php",
-            "src/games/Gcd.php"
-        ]
+            "src/lib/functions.php"
+        ],
+        "psr-4": {
+            "Craft\\BrainGames\\Games\\": "src/games/"
+        }
     },
     "require": {
         "wp-cli/php-cli-tools": "^0.11.8"

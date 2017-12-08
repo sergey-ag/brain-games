@@ -2,35 +2,18 @@
 
 namespace Craft\BrainGames\Games;
 
-function gcd(int $a, int $b)
+class Gcd
 {
-    if ($b > $a) {
-        $temp = $a;
-        $a = $b;
-        $b = $temp;
-    }
-    $func = function (int $a, int $b) use (&$func) {
-        if ($a % $b === 0) {
-            return $b;
-        }
-        if ($a % $b > $b) {
-            return $func($a % $b, $b);
-        }
-        return $func($b, $a % $b);
-    };
-    return $func($a, $b);
-}
+    const MIN_NUMBER = 1;
+    const MAX_NUMBER = 100;
+    const WELCOME_MSG = 'Find the greatest common divisor of given numbers.';
 
-function gcdGame()
-{
-    $welcomeMsg = 'Find the greatest common divisor of given numbers.';
-    srand();
-    
-    $gameQuestions = [];
-    for ($i = 1; $i <= \Craft\BrainGames\ROUNDS; $i = $i + 1) {
-        $number1 = rand(\Craft\BrainGames\MIN_NUMBER, \Craft\BrainGames\MAX_NUMBER);
-        $number2 = rand(\Craft\BrainGames\MIN_NUMBER, \Craft\BrainGames\MAX_NUMBER);
-        $gameQuestions[] = ['question' => "$number1 $number2", 'answer' => (string)(gcd($number1, $number2))];
+    public static function game()
+    {
+        srand();
+        
+        $number1 = rand(self::MIN_NUMBER, self::MAX_NUMBER);
+        $number2 = rand(self::MIN_NUMBER, self::MAX_NUMBER);
+        return ['question' => "$number1 $number2", 'answer' => (string)(\Craft\Lib\gcd($number1, $number2))];
     }
-    return ['welcomeMsg' => $welcomeMsg, 'gameQuestions' => $gameQuestions];
 }

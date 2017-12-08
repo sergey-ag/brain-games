@@ -5,26 +5,23 @@ namespace Craft\BrainGames;
 use function \cli\line;
 
 const ROUNDS = 3;
-const MIN_NUMBER = 1;
-const MAX_NUMBER = 100;
 
 function brainGame(string $game)
 {
     line('Welcome to the Brains Games');
-    $gameData = $game();
-    line($gameData['welcomeMsg']);
+    line($game::WELCOME_MSG);
     line();
     $name = \cli\prompt('May I have your name?');
     line('Hello, %s!', $name);
     line();
-    $points = 0;
-    foreach ($gameData['gameQuestions'] as $item) {
-        line('Question: %s', $item['question']);
+    for ($i = 1; $i <= ROUNDS; $i = $i + 1) {
+        $gameData = $game::game();
+        line('Question: %s', $gameData['question']);
         $userAnswer = \cli\prompt('Your answer: ');
-        if ($userAnswer === $item['answer']) {
+        if ($userAnswer === $gameData['answer']) {
             line('Correct');
         } else {
-            line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'.', $userAnswer, $item['answer']);
+            line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'.', $userAnswer, $gameData['answer']);
             line('Let\'s try again, %s!', $name);
             exit();
         }

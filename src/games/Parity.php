@@ -2,19 +2,20 @@
 
 namespace Craft\BrainGames\Games;
 
-function parity()
+class Parity
 {
-    $welcomeMsg = 'Answer "yes" if number even otherwise answer "no".';
-    srand();
+    const MIN_NUMBER = 1;
+    const MAX_NUMBER = 100;
+    const WELCOME_MSG = 'Answer "yes" if number even otherwise answer "no".';
 
-    $gameQuestions = [];
-    for ($i = 1; $i <= \Craft\BrainGames\ROUNDS; $i = $i + 1) {
-        $number = rand(\Craft\BrainGames\MIN_NUMBER, \Craft\BrainGames\MAX_NUMBER);
+    public static function game()
+    {
+        srand();
+    
+        $number = rand(self::MIN_NUMBER, self::MAX_NUMBER);
         if ($number % 2 === 0) {
-            $gameQuestions[] = ['question' => $number, 'answer' => 'yes'];
-        } else {
-            $gameQuestions[] = ['question' => $number, 'answer' => 'no'];
+            return ['question' => $number, 'answer' => 'yes'];
         }
+        return $gameQuestions[] = ['question' => $number, 'answer' => 'no'];
     }
-    return ['welcomeMsg' => $welcomeMsg, 'gameQuestions' => $gameQuestions];
 }

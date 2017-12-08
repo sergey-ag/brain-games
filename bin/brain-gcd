@@ -9,4 +9,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-Craft\BrainGames\brainGame('Craft\BrainGames\Games\gcdGame');
+Craft\BrainGames\brainGame('Craft\BrainGames\Games\Gcd');
