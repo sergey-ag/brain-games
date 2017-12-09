@@ -48,3 +48,17 @@ function progression(int $first, int $step, int $length = 10)
     }
     return $result;
 }
+
+function isPrime(int $num)
+{
+    if ($num < 1) {
+        return false;
+    }
+    $limit = sqrt($num);
+    for ($i = 2; $i <= $limit; $i = $i + 1) {
+        if ($num % $i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
