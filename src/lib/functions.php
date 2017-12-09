@@ -39,3 +39,12 @@ function balanceNumber(int $num)
     $unbalanced = $digitsSum % $digitsQty;
     return (int)str_pad('', $digitsQty, (string)$base) + (int)str_pad('', $unbalanced, '1');
 }
+
+function progression(int $first, int $step, int $length = 10)
+{
+    $result[] = $first;
+    for ($i = 1; $i < $length; $i = $i + 1) {
+        $result[] = $result[$i - 1] + $step;
+    }
+    return $result;
+}
