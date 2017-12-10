@@ -51,14 +51,14 @@ function progression(int $first, int $step, int $length = 10)
 
 function isPrime(int $num)
 {
-    if ($num < 1) {
-        return false;
-    }
-    $limit = sqrt($num);
-    for ($i = 2; $i <= $limit; $i = $i + 1) {
-        if ($num % $i === 0) {
+    $func = function (int $divisor) use ($num, &$func) {
+        if ($divisor === 1) {
+            return true;
+        }
+        if ($num % $divisor === 0) {
             return false;
         }
-    }
-    return true;
+        return $func($divisor - 1);
+    };
+    return $func((int)floor(sqrt($num)));
 }
